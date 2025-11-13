@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Day Budget Weight Loss Plan</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import and application */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            line-height: 1.6;
+        }
+        .section-header {
+            border-left: 5px solid #2563eb; /* Tailwind blue-600 */
+        }
+        .recipe-card {
+            background-color: #ffffff;
+            transition: transform 0.2s;
+        }
+        .recipe-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Custom styling for the table headers */
+        th {
+            background-color: #3b82f6; /* Tailwind blue-500 */
+            color: white;
+        }
+        /* Style for the calorie/protein callout boxes */
+        .callout {
+            border-left: 4px solid;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <!-- Header and Introduction -->
+    <header class="text-center mb-10 p-6 bg-white rounded-xl shadow-lg">
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-2">My Budget Weight Loss Plan</h1>
+        <p class="text-xl text-blue-600 font-medium">Goal: Daily $\mathbf{1,000}$ Calorie Deficit with 2-Hour Walk</p>
+        <div class="mt-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-sm font-semibold">
+            <div class="callout border-yellow-500 bg-yellow-50">Target Calories: $\mathbf{2,250 \text{ kcal}}$ / day</div>
+            <div class="callout border-green-500 bg-green-50">Budget for Protein/Veg: $\mathbf{₹33}$ / day</div>
+            <div class="callout border-indigo-500 bg-indigo-50">Protein Focus: Dal, Soya Chunks, Eggs</div>
+        </div>
+        <p class="text-sm text-gray-500 mt-2">*(Rice, Wheat/Atta, and Cooking Oil/Spices are considered free/provided.)*</p>
+    </header>
+
+    <!-- 7-Day Meal Plan Table -->
+    <section class="mb-12 bg-white p-6 rounded-xl shadow-lg overflow-x-auto">
+        <h2 class="text-2xl font-bold section-header pl-3 py-1 mb-6 text-gray-700">📅 7-Day Anti-Boredom Meal Plan</h2>
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead>
+                <tr>
+                    <th class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider rounded-tl-xl">Day</th>
+                    <th class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider">Breakfast (High Protein/Fibre)</th>
+                    <th class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider">Lunch (Main Carbs + Protein)</th>
+                    <th class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider rounded-tr-xl">Dinner (Roti Focus)</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200 text-sm">
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-4 font-semibold text-blue-700">Day 1</td>
+                    <td class="px-3 py-4">Dal Poha (Free Poha + $\mathbf{50\text{g}}$ Dal)</td>
+                    <td class="px-3 py-4">Soya Masala Rice (Free Rice + $\mathbf{50\text{g}}$ Soya)</td>
+                    <td class="px-3 py-4">Roti & Mix Dal Curry ($\mathbf{150\text{g}}$ Dal)</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-4 font-semibold text-blue-700">Day 2</td>
+                    <td class="px-3 py-4">Egg Bhurji & Roti ($\mathbf{2 \text{ Eggs}}$ + Free Atta)</td>
+                    <td class="px-3 py-4">Dal Chawal (Free Rice + $\mathbf{150\text{g}}$ Dal)</td>
+                    <td class="px-3 py-4">Anda Curry (Egg Curry) ($\mathbf{1 \text{ Egg}}$ + $\mathbf{100\text{g}}$ Dal)</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-4 font-semibold text-blue-700">Day 3</td>
+                    <td class="px-3 py-4">Soya Pulao (Free Rice + $\mathbf{25\text{g}}$ Soya)</td>
+                    <td class="px-3 py-4">Roti & Moong Dal ($\mathbf{150\text{g}}$ Dal)</td>
+                    <td class="px-3 py-4">Soya & Veg Stir-fry (Free Atta + $\mathbf{25\text{g}}$ Soya)</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-4 font-semibold text-blue-700">Day 4</td>
+                    <td class="px-3 py-4">Boiled Eggs & Salad ($\mathbf{2 \text{ Eggs}}$ + Veg)</td>
+                    <td class="px-3 py-4">Egg Fried Rice (Free Rice + $\mathbf{1 \text{ Egg}}$)</td>
+                    <td class="px-3 py-4">Roti & Chana Dal ($\mathbf{200\text{g}}$ Dal)</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-4 font-semibold text-blue-700">Day 5</td>
+                    <td class="px-3 py-4">Soya Upma (Free Rava + $\mathbf{50\text{g}}$ Soya)</td>
+                    <td class="px-3 py-4">Dal Pulao (Free Rice + $\mathbf{150\text{g}}$ Dal)</td>
+                    <td class="px-3 py-4">Roti & Mix Veg Sabzi (Free Atta + $\mathbf{100\text{g}}$ Dal)</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-4 font-semibold text-blue-700">Day 6</td>
+                    <td class="px-3 py-4">Masala Omelette & Roti (Free Atta + $\mathbf{2 \text{ Eggs}}$)</td>
+                    <td class="px-3 py-4">Rajma Chawal (using $100\text{g}$ Dal)</td>
+                    <td class="px-3 py-4">Anda Bhurji & Roti ($\mathbf{2 \text{ Eggs}}$ + Free Atta)</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-4 font-semibold text-blue-700">Day 7</td>
+                    <td class="px-3 py-4">Egg Poha (Free Poha + $\mathbf{1 \text{ Egg}}$)</td>
+                    <td class="px-3 py-4">Veg Khichdi (Free Rice + $\mathbf{150\text{g}}$ Dal)</td>
+                    <td class="px-3 py-4">Roti & Dal Fry (Free Atta + $\mathbf{100\text{g}}$ Dal)</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Core Recipes Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold section-header pl-3 py-1 mb-6 text-gray-700">👨‍🍳 Core Recipes (Plan Staples)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Recipe 1: Soya Masala Rice -->
+            <div class="recipe-card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">1. High-Protein Soya Masala Rice (Lunch Base)</h3>
+                <p class="text-sm text-gray-600 mb-4 border-b pb-2">Focus: $\mathbf{50\text{g}}$ Soya Chunks + Free Rice. High satiety for the afternoon walk.</p>
+                <h4 class="font-semibold text-gray-700 mb-1">Ingredients:</h4>
+                <ul class="list-disc list-inside text-sm text-gray-600 ml-4 space-y-1">
+                    <li>$\mathbf{50\text{g}}$ Soya Chunks (dry weight)</li>
+                    <li>$1 \text{ cup}$ Pre-cooked Rice (Free)</li>
+                    <li>$50\text{g}$ Onion/Tomato/Green Chili (Budget Veg)</li>
+                    <li>Oil/Ghee, Ginger-Garlic Paste, Masalas (Free)</li>
+                </ul>
+                <h4 class="font-semibold text-gray-700 mt-3 mb-1">Method:</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-600 ml-4 space-y-1">
+                    <li>Soak Soya Chunks in hot water for 15 min, squeeze out water thoroughly, and set aside.</li>
+                    <li>Heat free oil/ghee, sauté chopped onion, then add spices and ginger-garlic paste.</li>
+                    <li>Add Soya Chunks and cook until lightly browned (this enhances texture).</li>
+                    <li>Mix in pre-cooked Free Rice, chopped tomato, and salt. Cook for $5\text{ minutes}$ on low heat.</li>
+                </ol>
+            </div>
+
+            <!-- Recipe 2: Double-Protein Dal & Egg Curry -->
+            <div class="recipe-card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">2. Double-Protein Dal & Egg Curry (Dinner Base)</h3>
+                <p class="text-sm text-gray-600 mb-4 border-b pb-2">Focus: $\mathbf{2 \text{ Eggs}} + \mathbf{100\text{g}}$ Dal. High protein for muscle recovery overnight.</p>
+                <h4 class="font-semibold text-gray-700 mb-1">Ingredients:</h4>
+                <ul class="list-disc list-inside text-sm text-gray-600 ml-4 space-y-1">
+                    <li>$\mathbf{2 \text{ Eggs}}$ (Budget)</li>
+                    <li>$\mathbf{100\text{g}}$ Dal (pre-cooked) (Budget)</li>
+                    <li>$50\text{g}$ Onion/Tomato/Green Chili (Budget Veg)</li>
+                    <li>Atta for $\mathbf{4 \text{ Rotis}}$ (Free)</li>
+                    <li>Oil/Ghee, Spices (Free)</li>
+                </ul>
+                <h4 class="font-semibold text-gray-700 mt-3 mb-1">Method:</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-600 ml-4 space-y-1">
+                    <li>Boil the eggs, peel them, and keep aside.</li>
+                    <li>Prepare a basic curry base: heat oil/ghee, sauté chopped onion, tomato, and spices.</li>
+                    <li>Add the $\mathbf{100\text{g}}$ of pre-cooked Dal and a splash of water (if needed). Simmer for $5\text{ minutes}$.</li>
+                    <li>Gently place the boiled eggs into the curry. Serve hot with fresh **Free Rotis**.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus Recipes Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold section-header pl-3 py-1 mb-6 text-gray-700">➕ Bonus Recipes for Variety</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <!-- Bonus Recipe 1: Moong Dal Cheela -->
+            <div class="recipe-card p-6 rounded-xl shadow-lg">
+                <h3 class="text-lg font-bold text-blue-700 mb-2">3. High-Protein Moong Dal Cheela</h3>
+                <p class="text-sm text-gray-600 mb-3">Uses: Dal allocation. Excellent quick, high-protein breakfast or snack.</p>
+                <h4 class="font-semibold text-gray-700 mb-1">Method:</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-600 ml-4 space-y-1">
+                    <li>Soak $50\text{g}$ **Moong Dal** (Budget) overnight.</li>
+                    <li>Blend the soaked dal with a small green chili, ginger, and water to a smooth, flowing batter.</li>
+                    <li>Heat a non-stick pan (with minimal free oil/ghee) and spread the batter thinly like a dosa.</li>
+                    <li>Cook on both sides until golden. Serve with free mint/coriander chutney (if available).</li>
+                </ol>
+            </div>
+
+            <!-- Bonus Recipe 2: Soya Sprouts Salad -->
+            <div class="recipe-card p-6 rounded-xl shadow-lg">
+                <h3 class="text-lg font-bold text-blue-700 mb-2">4. Raw Soya Sprout Salad (Budget Snack)</h3>
+                <p class="text-sm text-gray-600 mb-3">Uses: Dal allocation. Raw, zero-oil, maximizes nutrients and fiber.</p>
+                <h4 class="font-semibold text-gray-700 mb-1">Method:</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-600 ml-4 space-y-1">
+                    <li>Soak $\mathbf{50\text{g}}$ **Chana Dal** (Budget) or whole Moong dal overnight until soft.</li>
+                    <li>Drain and mix with chopped onion, tomato, and cucumber (Budget Veg).</li>
+                    <li>Add salt, pepper, and a dash of lemon juice (if available).</li>
+                    <li>This makes a quick, fibre-packed snack that you can eat before or after your walk.</li>
+                </ol>
+            </div>
+
+            <!-- Bonus Recipe 3: High-Protein Dal Tikki/Cutlet -->
+            <div class="recipe-card p-6 rounded-xl shadow-lg">
+                <h3 class="text-lg font-bold text-blue-700 mb-2">5. High-Protein Dal Tikki (Using Leftovers)</h3>
+                <p class="text-sm text-gray-600 mb-3">Uses: Leftover Dal and Potato (Budget Veg). Highly satisfying evening snack.</p>
+                <h4 class="font-semibold text-gray-700 mb-1">Method:</h4>
+                <ol class="list-decimal list-inside text-sm text-gray-600 ml-4 space-y-1">
+                    <li>Mash $1$ small boiled potato (Budget Veg) with $100\text{g}$ of leftover cooked **Dal**.</li>
+                    <li>Add chopped coriander/chili and free spices (salt, *amchur*).</li>
+                    <li>Form into small patties (tikkis).</li>
+                    <li>Shallow-fry on a non-stick pan with minimal free oil/ghee until crisp and golden brown.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Reminder -->
+    <footer class="text-center mt-10 p-4 text-gray-500 text-sm">
+        <p class="font-bold text-lg">Remember the Golden Rule:</p>
+        <p class="text-red-600">The high protein from the Dal, Soya, and Eggs is vital. Do NOT reduce these amounts to meet your budget; reduce the *free* rice/roti if needed.</p>
+        <p>Stay hydrated during your 2-hour daily walk!</p>
+    </footer>
+
+</body>
+</html>
