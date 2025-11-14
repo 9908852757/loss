@@ -3,240 +3,525 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7-Day Budget Protein Plan</title>
+    <title>Personalized Weight Loss Kitchen</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom font import and application */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Light background */
+            background-color: #f0f4f8; /* Light blue/gray background */
             line-height: 1.6;
         }
-        .main-container {
-            max-width: 1200px;
-        }
-        .header-card {
-            background-image: linear-gradient(135deg, #1e3a8a, #3b82f6); /* Deep blue gradient */
-        }
-        .table-header-bg {
-            background-color: #1e3a8a; /* Dark blue */
+        .section-header {
+            border-left: 5px solid #2563eb; /* Tailwind blue-600 */
         }
         .recipe-card {
             background-color: #ffffff;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-            transition: all 0.2s ease-in-out;
-            border-radius: 0.75rem;
-            height: 100%; /* Ensure uniform height in grid */
+            transition: transform 0.2s;
+            border: 1px solid #e2e8f0;
         }
         .recipe-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        /* Style for mobile table accessibility */
-        @media (max-width: 640px) {
-            .meal-table td, .meal-table th {
-                padding: 0.5rem;
-                font-size: 0.75rem; /* text-xs */
-                white-space: normal; /* Allow text wrapping */
-            }
-            .meal-table th:nth-child(1) { width: 15%; } /* Keep day column narrow */
+        /* Style for the Goal cards */
+        .goal-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
         }
-        .youtube-link {
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-        }
+        .kcal-badge { background-color: #fee2e2; color: #ef4444; } /* Red */
+        .protein-badge { background-color: #d1fae5; color: #10b981; } /* Green */
+        .focus-badge { background-color: #e0f2fe; color: #3b82f6; } /* Blue */
     </style>
 </head>
 <body class="p-4 sm:p-8">
 
-    <!-- Main Container for Centering -->
-    <div class="main-container mx-auto">
+    <!-- Header and Introduction -->
+    <header class="text-center mb-10 p-6 bg-white rounded-xl shadow-2xl border-b-4 border-blue-600">
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-2">My Personalized Weight Loss Kitchen</h1>
+        <p class="text-xl text-blue-600 font-medium">Goal: Lose 20 kg in 6 months supported by 2 hours of brisk walking daily.</p>
+    </header>
 
-        <!-- Header and Goal Section -->
-        <header class="header-card text-center p-6 sm:p-8 mb-8 rounded-xl shadow-2xl">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">The Budget Protein Plan</h1>
-            <p class="text-xl text-blue-100 font-medium">Daily 1,000 kcal Deficit for Sustainable Weight Loss</p>
-            <div class="mt-5 flex flex-wrap justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-base font-semibold">
-                <span class="bg-white text-gray-800 px-4 py-2 rounded-full shadow-md">Target Intake: **2,250 kcal**</span>
-                <span class="bg-white text-gray-800 px-4 py-2 rounded-full shadow-md">Budget Goal: **₹33** per day</span>
+    <!-- Personalized Goal Summary (NEW) -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold section-header pl-3 py-1 mb-6 text-gray-700">📈 My Daily Targets</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="goal-card border-b-4 border-red-500">
+                <p class="text-xs font-semibold uppercase text-red-500 mb-1">Calorie Target (Deficit)</p>
+                <p class="text-4xl font-extrabold text-gray-800">2,250</p>
+                <p class="text-sm text-gray-500">kcal/day</p>
             </div>
-            <p class="text-sm text-blue-200 mt-4">
-                *(This plan relies on Dal, Eggs, Soya Chunks, and Vegetables for protein/fiber, with free Rice, Roti, and Cooking essentials for core energy.)*
-            </p>
-        </header>
 
-        <!-- Walking Commitment Callout -->
-        <div class="p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-lg mb-8 shadow-md">
-            <p class="text-sm font-semibold text-yellow-700">🚶 Daily Exercise Commitment:</p>
-            <p class="text-lg font-bold text-yellow-800">2 Hours of Brisk Walking Required to Achieve the **1,000 kcal** Deficit.</p>
+            <div class="goal-card border-b-4 border-green-500">
+                <p class="text-xs font-semibold uppercase text-green-500 mb-1">Minimum Protein</p>
+                <p class="text-4xl font-extrabold text-gray-800">185</p>
+                <p class="text-sm text-gray-500">grams/day</p>
+            </div>
+
+            <div class="goal-card border-b-4 border-blue-500">
+                <p class="text-xs font-semibold uppercase text-blue-500 mb-1">Key Focus</p>
+                <p class="text-xl font-extrabold text-gray-800 mt-2">S. Indian Staples</p>
+                <p class="text-sm text-gray-500">Lentils, Soya, Eggs, **Leafy Greens**</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Image Analysis Section (UNCHANGED) -->
+    <section class="mb-12 bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold section-header pl-3 py-1 mb-6 text-gray-700">📸 Analyze Your Meal (AI Vision)</h2>
+        <p class="text-sm text-gray-500 mb-4">Take a photo of your cooked meal using the camera to get an estimated breakdown of calories and protein.</p>
+        
+        <input type="file" id="meal-image-input" accept="image/*" capture="environment" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 mb-4">
+        
+        <div id="loading-indicator" class="hidden text-center p-4 bg-blue-50 text-blue-700 rounded-lg">
+            <svg class="animate-spin h-5 w-5 mr-3 inline-block" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            Analyzing image... This may take a moment.
         </div>
 
+        <div id="analysis-result" class="mt-4 p-4 border border-gray-200 rounded-lg bg-gray-50 hidden">
+            <h3 class="text-lg font-bold text-gray-800 mb-2">AI Estimated Nutrition:</h3>
+            <pre id="analysis-output" class="whitespace-pre-wrap text-sm text-gray-700"></pre>
+        </div>
 
-        <!-- 7-Day Meal Plan Table -->
-        <section class="mb-12 bg-white p-4 sm:p-6 rounded-xl shadow-lg overflow-x-auto">
-            <h2 class="text-2xl font-bold border-l-4 border-blue-600 pl-3 py-1 mb-6 text-gray-700">📅 Weekly Meal Rotation</h2>
-            <table class="min-w-full divide-y divide-gray-200 meal-table">
-                <thead>
-                    <tr>
-                        <th class="px-3 py-3 text-left table-header-bg text-xs font-semibold uppercase tracking-wider rounded-tl-xl">Day</th>
-                        <th class="px-3 py-3 text-left table-header-bg text-xs font-semibold uppercase tracking-wider">Breakfast (~500 kcal)</th>
-                        <th class="px-3 py-3 text-left table-header-bg text-xs font-semibold uppercase tracking-wider">Lunch (~750 kcal)</th>
-                        <th class="px-3 py-3 text-left table-header-bg text-xs font-semibold uppercase tracking-wider rounded-tr-xl">Dinner (~750 kcal)</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y divide-gray-100 text-sm">
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-3 py-4 font-bold text-blue-700">Day 1</td>
-                        <td class="px-3 py-4">Dal Poha (50g Dal)</td>
-                        <td class="px-3 py-4">Soya Masala Rice (50g Soya)</td>
-                        <td class="px-3 py-4">Roti & Mix Dal Curry (200g Dal)</td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-3 py-4 font-bold text-blue-700">Day 2</td>
-                        <td class="px-3 py-4">Egg Bhurji & Roti (2 Eggs)</td>
-                        <td class="px-3 py-4">Dal Chawal (Free Rice + 160g Dal)</td>
-                        <td class="px-3 py-4">Anda Curry (Egg Curry) (1 Egg + 100g Dal)</td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-3 py-4 font-bold text-blue-700">Day 3</td>
-                        <td class="px-3 py-4">Soya Pulao (Free Rice + 25g Soya)</td>
-                        <td class="px-3 py-4">Roti & Moong Dal (160g Dal)</td>
-                        <td class="px-3 py-4">Soya & Veg Stir-fry (25g Soya)</td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-3 py-4 font-bold text-blue-700">Day 4</td>
-                        <td class="px-3 py-4">Boiled Eggs & Veg (2 Eggs)</td>
-                        <td class="px-3 py-4">Egg Fried Rice (Free Rice + 1 Egg)</td>
-                        <td class="px-3 py-4">Roti & Chana Dal (200g Dal)</td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-3 py-4 font-bold text-blue-700">Day 5</td>
-                        <td class="px-3 py-4">Soya Upma (Free Rava + 50g Soya)</td>
-                        <td class="px-3 py-4">Dal Pulao (Free Rice + 160g Dal)</td>
-                        <td class="px-3 py-4">Roti & Mix Veg Sabzi (100g Dal)</td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-3 py-4 font-bold text-blue-700">Day 6</td>
-                        <td class="px-3 py-4">Masala Omelette & Roti (2 Eggs)</td>
-                        <td class="px-3 py-4">Rajma Chawal (using 100g Chana Dal)</td>
-                        <td class="px-3 py-4">Anda Bhurji & Roti (2 Eggs)</td>
-                    </tr>
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-3 py-4 font-bold text-blue-700">Day 7</td>
-                        <td class="px-3 py-4">Egg Poha (Free Poha + 1 Egg)</td>
-                        <td class="px-3 py-4">Veg Khichdi (Free Rice + 150g Dal)</td>
-                        <td class="px-3 py-4">Roti & Dal Fry (Free Atta + 110g Dal)</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="mt-4 text-xs text-gray-500">
-                *Note: Dal and Soya quantities are approximate dry weights. Please use the recommended **50g** maximum for Soya Chunks daily for safety.
-            </div>
-        </section>
+        <div id="analysis-error" class="mt-4 p-4 border border-red-200 rounded-lg bg-red-50 text-red-700 hidden">
+            Error during analysis. Please try a different image.
+        </div>
+    </section>
 
-        <!-- Core Recipes Section -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold border-l-4 border-blue-600 pl-3 py-1 mb-6 text-gray-700">👨‍🍳 Core Recipes & Video Resources (Hindi/English)</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Search Bar Section (UNCHANGED) -->
+    <section class="mb-12 bg-white p-6 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-bold section-header pl-3 py-1 mb-6 text-gray-700">🔍 Find Your Recipe</h2>
+        <div class="relative">
+            <input 
+                type="text" 
+                id="recipe-search" 
+                oninput="filterRecipes()" 
+                placeholder="Search by ingredient (e.g., egg, soya, dal) or meal type (lunch, snack)..." 
+                class="w-full p-4 pl-12 border-2 border-blue-300 rounded-xl text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-md transition duration-150"
+            >
+            <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+    </section>
 
-                <!-- Recipe 1: Soya Masala Rice -->
-                <div class="recipe-card p-6">
-                    <h3 class="text-xl font-bold text-blue-800 mb-3">1. High-Protein Soya Masala Rice</h3>
-                    <p class="text-sm text-gray-600 mb-3">Uses **50g** Soya Chunks + Free Rice. High satiety for the afternoon walk.</p>
-                    <h4 class="font-semibold text-gray-700 mb-1">Method Highlights:</h4>
-                    <ul class="list-disc list-inside text-sm text-gray-600 ml-4 space-y-1">
-                        <li>Soak, squeeze, and pan-fry Soya Chunks until slightly browned.</li>
-                        <li>Prepare onion/tomato/spices curry base using free oil.</li>
-                        <li>Mix the Soya Chunks with the curry and pre-cooked Free Rice.</li>
-                    </ul>
-                    <a href="http://www.youtube.com/watch?v=REIv6f9ElKY" target="_blank" class="youtube-link mt-3 text-blue-600 hover:text-blue-800 text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-                        </svg>
-                        Watch Quick Recipe Tutorial (Hindi)
+    <!-- Dynamic Recipe List Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold section-header pl-3 py-1 mb-6 text-gray-700">🍽️ Budget-Friendly High-Protein Recipes</h2>
+        <!-- This container will be populated by JavaScript -->
+        <div id="recipe-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Recipes will be inserted here -->
+        </div>
+        <p id="no-results" class="hidden text-center text-xl text-gray-500 mt-12 p-6 bg-yellow-100 border-l-4 border-yellow-500 rounded-lg">
+            No recipes found matching your search. Try a different keyword!
+        </p>
+    </section>
+
+    <!-- Footer Reminder -->
+    <footer class="text-center mt-10 p-4 text-gray-500 text-sm">
+        <p class="font-bold text-lg">Goal Reminder:</p>
+        <p>Maintain your **2,250 kcal** target and hit the **185g protein** mark daily to fuel your 2-hour brisk walk and achieve your 20kg goal!</p>
+    </footer>
+
+    <script>
+        // Global variables for Firebase configuration (provided by Canvas environment)
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const apiKey = "" // API key for Gemini API calls
+        
+        // --- RECIPE DATA ---
+        // Nutritional estimates are based on the large portions needed to hit 2250 kcal / 185g protein per day.
+        const allRecipes = [
+            {
+                id: 1,
+                title: "High-Protein Soya Masala Veg Rice",
+                focus: "Uses 100g Soya Chunks. Primary Lunch source for protein, fiber, and sustained energy.",
+                mealType: "Lunch",
+                calories: 650, // Updated for 2,250 kcal plan
+                protein: 48, // Increased slightly due to vegetables
+                tutorialUrl: "https://www.youtube.com/results?search_query=soya+masala+veg+rice+recipe+south+indian+style", 
+                tags: ["soya", "rice", "high protein", "lunch", "indian", "vegetable"],
+                ingredients: ["**100g Soya Chunks (dry)**", "Rice (Free, controlled portion)", "**Mixed Vegetables (Carrot, Beans, Peas)**", "Onion/Tomato/Budget Veg", "Minimal Oil/Ghee, Masalas"],
+                method: [
+                    "Soak Soya Chunks, squeeze out water thoroughly.",
+                    "Heat minimal oil/ghee, sauté onion, add spices and paste.",
+                    "Add **mixed vegetables** and cook until tender.",
+                    "Add Soya Chunks and cook until lightly browned.",
+                    "Mix in pre-cooked Rice and cook for 5 min."
+                ]
+            },
+            {
+                id: 2,
+                title: "Double-Protein Palak/Methi Dal & Egg Curry",
+                focus: "2 Eggs + 150g Dal. High-protein Dinner with added leafy greens for recovery and fiber.",
+                mealType: "Dinner",
+                calories: 550, 
+                protein: 52, // Increased slightly due to greens
+                tutorialUrl: "https://www.youtube.com/results?search_query=dal+egg+curry+with+spinach+south+indian", 
+                tags: ["egg", "dal", "curry", "dinner", "high protein", "indian", "leafy green"],
+                ingredients: ["**2-3 Eggs**", "**150g Dal (pre-cooked)**", "**100g Leafy Greens (Palak/Methi)**", "Onion/Tomato/Budget Veg", "Atta for 3 Rotis (Free)", "Minimal Oil/Ghee, Spices"],
+                method: [
+                    "Boil and peel the eggs.",
+                    "Prepare a light curry base, adding **chopped leafy greens** until wilted.",
+                    "Add the pre-cooked Dal and simmer.",
+                    "Gently place the boiled eggs into the curry. Serve with rotis."
+                ]
+            },
+            {
+                id: 3,
+                title: "High-Protein Moong Dal Cheela (4 pcs)",
+                focus: "Your heavy Post-Walk Breakfast. Uses 100g Dal for maximum protein.",
+                mealType: "Breakfast/Post-Walk",
+                calories: 450, 
+                protein: 35, 
+                tutorialUrl: "https://www.youtube.com/results?search_query=moong+dal+cheela+recipe", 
+                tags: ["dal", "moong", "breakfast", "snack", "cheela", "vegetarian"],
+                ingredients: ["**100g Moong Dal**", "Green Chili, Ginger", "Water", "Minimal Oil/Ghee"],
+                method: [
+                    "Soak 100g Moong Dal overnight.",
+                    "Blend with chili, ginger, and water to a smooth batter.",
+                    "Heat a non-stick pan with minimal oil/ghee and spread the batter thinly (make 4 cheelas).",
+                    "Cook on both sides until golden. Serve hot."
+                ]
+            },
+            {
+                id: 4,
+                title: "Raw Chana Dal Sprout Salad (Large)",
+                focus: "Perfect high-fiber, zero-oil afternoon snack (5:00 PM).",
+                mealType: "Snack",
+                calories: 250, 
+                protein: 15, 
+                tutorialUrl: "https://www.youtube.com/results?search_query=chana+dal+sprout+salad+recipe", 
+                tags: ["chana", "dal", "salad", "raw", "snack", "zero oil"],
+                ingredients: ["**75g Chana Dal (soaked/sprouted)**", "Chopped Onion, Tomato, Cucumber", "Salt, Pepper, Lemon Juice"],
+                method: [
+                    "Soak 75g Chana Dal overnight (or use sprouts).",
+                    "Drain and mix with chopped fresh vegetables.",
+                    "Add salt, pepper, and lemon juice. Mix well and eat."
+                ]
+            },
+            {
+                id: 5,
+                title: "High-Fiber Veg Khichdi (Large Serving)",
+                focus: "One-pot meal for high fiber and balanced nutrition.",
+                mealType: "Lunch/Dinner",
+                calories: 600, 
+                protein: 40, 
+                tutorialUrl: "https://www.youtube.com/results?search_query=veg+khichdi+recipe+south+indian", 
+                tags: ["dal", "rice", "khichdi", "one-pot", "vegetarian"],
+                ingredients: ["Rice (Free, controlled portion)", "**200g Dal**", "**Mixed Root/Leafy Vegetables**", "Spices"],
+                method: [
+                    "Wash rice and dal.",
+                    "In a pressure cooker, add minimal oil/ghee, spices, and veggies (if using).",
+                    "Add rice, dal, water (3x quantity), and salt.",
+                    "Cook for 3-4 whistles until soft and well-combined."
+                ]
+            },
+            {
+                id: 6,
+                title: "Egg Bhurji & Roti (3 Eggs)",
+                focus: "Simple, quick, and high-protein alternative breakfast or dinner.",
+                mealType: "Breakfast/Dinner",
+                calories: 450, 
+                protein: 25, 
+                tutorialUrl: "https://www.youtube.com/results?search_query=egg+bhurji+roti+recipe+low+oil", 
+                tags: ["egg", "bhurji", "roti", "high protein", "indian"],
+                ingredients: ["**3 Eggs**", "Atta for 3 Rotis (Free)", "Onion, Green Chili", "Minimal Oil/Ghee, Spices"],
+                method: [
+                    "Heat minimal oil/ghee, sauté chopped onion and chili until translucent.",
+                    "Add spices (turmeric, chili powder).",
+                    "Whisk eggs and pour into the pan. Scramble until cooked through.",
+                    "Serve hot with rotis."
+                ]
+            },
+            {
+                id: 7,
+                title: "High-Protein Egg White Omelette with Greens",
+                focus: "Minimal fat, highest quality protein breakfast. Uses 4 Egg Whites + 1 Whole Egg and Greens.",
+                mealType: "Breakfast",
+                calories: 230, 
+                protein: 22, 
+                tutorialUrl: "https://www.youtube.com/results?search_query=high+protein+egg+white+omelette+with+spinach+south+indian", 
+                tags: ["egg", "breakfast", "low carb", "high protein", "leafy green"],
+                ingredients: ["**4 Egg Whites + 1 Whole Egg**", "**Chopped Spinach/Cabbage**", "Onion/Tomato/Capsicum (Budget Veg)", "Minimal Oil/Ghee", "Spices"],
+                method: [
+                    "Whisk egg whites and whole egg with salt and pepper.",
+                    "Heat a non-stick pan with minimal oil, sauté chopped vegetables and greens.",
+                    "Pour the egg mixture over the vegetables. Cook until firm. Fold and serve hot."
+                ]
+            },
+            {
+                id: 8,
+                title: "High-Fiber Black Chana Veg Curry (Large)",
+                focus: "Maximum fiber and protein from whole legumes and added vegetables. Great dinner option.",
+                mealType: "Lunch/Dinner",
+                calories: 450, 
+                protein: 30, 
+                tutorialUrl: "https://www.youtube.com/results?search_query=kala+chana+masala+with+vegetables+weight+loss+south+indian", 
+                tags: ["dal", "chana", "curry", "lunch", "fiber", "vegetable"],
+                ingredients: ["**150g Black Chana (Kala Chana)**", "**Mixed Vegetables (Gourd/Carrot)**", "Onion/Tomato (Budget Veg)", "Ginger-Garlic Paste", "Spices", "Minimal Oil/Ghee"],
+                method: [
+                    "Soak Chana overnight, then boil until soft.",
+                    "Prepare a light curry base using sautéed onion, tomato, and spices.",
+                    "Add the boiled Chana and **chopped vegetables** and simmer.",
+                    "Serve with rotis or rice."
+                ]
+            },
+            {
+                id: 9,
+                title: "Baked High-Protein Soya Cutlets (4 pcs)",
+                focus: "Zero-oil snack or side dish. High satiety.",
+                mealType: "Snack/Side",
+                calories: 350, 
+                protein: 30, 
+                tutorialUrl: "https://www.youtube.com/results?search_query=baked+soya+cutlet+recipe+zero+oil", 
+                tags: ["soya", "snack", "zero oil", "low carb", "cutlet"],
+                ingredients: ["**75g Soya Chunks (dry)**", "1 small boiled Potato (Binder)", "Coriander, Green Chili", "Spices"],
+                method: [
+                    "Boil Soya chunks, squeeze water, and blend/mash roughly.",
+                    "Mash boiled potato and mix with Soya, coriander, chili, and spices.",
+                    "Form into small patties (4 cutlets).",
+                    "Bake/Air-Fry until crisp (preferred) or shallow-fry with minimal oil."
+                ]
+            },
+            {
+                id: 10,
+                title: "High-Fiber Soya & Leafy Greens Curry",
+                focus: "Maximum fiber and protein in a low-fat, budget-friendly curry base.",
+                mealType: "Dinner",
+                calories: 500, 
+                protein: 40, 
+                tutorialUrl: "https://www.youtube.com/results?search_query=soya+chunks+spinach+curry+south+indian", 
+                tags: ["soya", "leafy green", "dinner", "high protein", "curry", "fiber", "low fat"],
+                ingredients: ["**100g Soya Chunks (dry)**", "**200g Leafy Greens (Spinach/Methi)**", "Onion/Tomato/Ginger-Garlic Paste", "Spices", "Minimal Oil/Ghee"],
+                method: [
+                    "Soak Soya Chunks, squeeze water.",
+                    "Prepare a light curry base (use water/dry roast for flavor).",
+                    "Add the Soya Chunks and spices.",
+                    "Stir in the **chopped leafy greens** and cook until wilted and tender. Serve with 3 Rotis."
+                ]
+            }
+        ];
+
+        const recipeListEl = document.getElementById('recipe-list');
+        const noResultsEl = document.getElementById('no-results');
+
+        /**
+         * Renders the list of provided recipes into the HTML container.
+         * @param {Array} recipesToRender - The array of recipe objects to display.
+         */
+        function renderRecipes(recipesToRender) {
+            recipeListEl.innerHTML = ''; // Clear existing content
+
+            if (recipesToRender.length === 0) {
+                noResultsEl.classList.remove('hidden');
+                return;
+            }
+
+            noResultsEl.classList.add('hidden');
+
+            recipesToRender.forEach(recipe => {
+                // Ensure bolding for key ingredients
+                const ingredientsList = recipe.ingredients.map(ing => `<li class="text-sm text-gray-600 ml-4">${ing}</li>`).join('');
+                const methodList = recipe.method.map(step => `<li class="text-sm text-gray-600 ml-4">${step}</li>`).join('');
+                
+                // Nutrition Badges
+                const nutritionBadges = `
+                    <div class="flex space-x-3 mb-3">
+                        <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full kcal-badge">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            ${recipe.calories} kcal
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full protein-badge">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            ${recipe.protein}g Protein
+                        </span>
+                    </div>
+                `;
+
+                // Tutorial Button
+                const tutorialButton = recipe.tutorialUrl ? `
+                    <a href="${recipe.tutorialUrl}" target="_blank" class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-150">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                        Watch Video Tutorial
                     </a>
-                </div>
+                ` : '';
 
-                <!-- Recipe 2: Double-Protein Dal & Egg Curry -->
-                <div class="recipe-card p-6">
-                    <h3 class="text-xl font-bold text-blue-800 mb-3">2. Double-Protein Dal & Egg Curry</h3>
-                    <p class="text-sm text-gray-600 mb-3">Uses **2 Eggs** + **100g** Dal. High protein for night muscle recovery.</p>
-                    <h4 class="font-semibold text-gray-700 mb-1">Method Highlights:</h4>
-                    <ul class="list-disc list-inside text-sm text-gray-600 ml-4 space-y-1">
-                        <li>Boil the **2 Eggs** and set aside.</li>
-                        <li>Prepare a thick curry base, then add pre-cooked Dal and simmer.</li>
-                        <li>Add peeled eggs to the curry. Serve hot with Free Rotis.</li>
-                    </ul>
-                    <a href="http://www.youtube.com/watch?v=o_WDr77iNI4" target="_blank" class="youtube-link mt-3 text-blue-600 hover:text-blue-800 text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-                        </svg>
-                        Watch Egg Recipes for Weight Loss (Hindi)
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <!-- Bonus Recipes Section -->
-        <section class="mb-12">
-            <h2 class="text-2xl font-bold border-l-4 border-green-600 pl-3 py-1 mb-6 text-gray-700">➕ Bonus Recipes for Zero-Cost Variety</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                // Create the HTML card for the recipe
+                const recipeCard = `
+                    <div class="recipe-card p-6 rounded-xl shadow-lg border-t-4 border-blue-500 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full focus-badge mb-3">${recipe.mealType.toUpperCase()}</span>
+                            ${nutritionBadges} 
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">${recipe.title}</h3>
+                            <p class="text-sm text-gray-500 mb-4">${recipe.focus}</p>
 
-                <!-- Bonus Recipe 1: Dal Cheela -->
-                <div class="recipe-card p-6">
-                    <h3 class="text-lg font-bold text-green-700 mb-2">3. Moong Dal Cheela (High-Protein Breakfast)</h3>
-                    <p class="text-sm text-gray-600 mb-3">Soak and blend **50g** Moong Dal with free spices into a thin, crepe-like Cheela. Cook on a non-stick pan with minimal oil/ghee.</p>
-                    <a href="http://www.youtube.com/watch?v=X4WiIGzgeEY" target="_blank" class="youtube-link mt-3 text-green-600 hover:text-green-800 text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-                        </svg>
-                        Watch 5-Min Cheela Recipe (Hindi)
-                    </a>
-                </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mb-1 flex items-center"><svg class="w-4 h-4 mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944v.001zm0 14.111a11.955 11.955 0 01-8.618-4.016l-.772.772A11.963 11.963 0 0012 20.944v.001zm0-14.111a11.955 11.955 0 008.618 4.016l.772-.772A11.963 11.963 0 0112 2.944v.001z"></path></svg> Ingredients:</h4>
+                                    <ul class="list-disc list-inside space-y-1">
+                                        ${ingredientsList}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 mt-3 mb-1 flex items-center"><svg class="w-4 h-4 mr-1 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg> Method:</h4>
+                                    <ol class="list-decimal list-inside space-y-1">
+                                        ${methodList}
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        ${tutorialButton}
+                    </div>
+                `;
+                recipeListEl.insertAdjacentHTML('beforeend', recipeCard);
+            });
+        }
 
-                <!-- Bonus Recipe 2: Rajma Chawal -->
-                <div class="recipe-card p-6">
-                    <h3 class="text-lg font-bold text-green-700 mb-2">4. Rajma (Chana Dal) Chawal Substitute</h3>
-                    <p class="text-sm text-gray-600 mb-3">Use Chana Dal (**100g**). Soak well, pressure cook, and prepare a simple tomato-onion Dal Fry base. Serve with Free Rice.</p>
-                    <a href="http://www.youtube.com/watch?v=l3TqjX4-8nM" target="_blank" class="youtube-link mt-3 text-green-600 hover:text-green-800 text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-                        </svg>
-                        Watch Dal Fry Tadka Recipe (Hindi)
-                    </a>
-                </div>
+        /**
+         * Filters the allRecipes array based on the search input value.
+         */
+        function filterRecipes() {
+            const searchTerm = document.getElementById('recipe-search').value.toLowerCase().trim();
 
-                <!-- Bonus Recipe 3: Dal Tikki -->
-                <div class="recipe-card p-6">
-                    <h3 class="text-lg font-bold text-green-700 mb-2">5. High-Protein Dal Tikki (Snack)</h3>
-                    <p class="text-sm text-gray-600 mb-3">Mash leftover Dal (**100g**) with a boiled Potato (Budget Veg). Form into patties, lightly shallow-fry in minimal free oil/ghee. Great pre-walk snack.</p>
-                    <a href="http://www.youtube.com/watch?v=QmbjnZ_ICgY" target="_blank" class="youtube-link mt-3 text-green-600 hover:text-green-800 text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-                        </svg>
-                        Watch Weight Loss Tikki Recipe (Hindi)
-                    </a>
-                </div>
-            </div>
-        </section>
+            if (!searchTerm) {
+                renderRecipes(allRecipes);
+                return;
+            }
 
-        <!-- Safety and Note Footer -->
-        <footer class="text-center mt-10 p-4 bg-white rounded-xl shadow-lg border-t-4 border-red-500">
-            <h3 class="font-bold text-lg text-red-600 mb-2">IMPORTANT SAFETY NOTE</h3>
-            <p class="text-gray-700 mb-2">
-                The **50g** dry weight per day of Soya Chunks is the recommended moderate limit to avoid potential digestive or hormonal discomfort associated with excessive intake.
-            </p>
-            <p class="text-gray-500 text-sm">
-                Always ensure variety by mixing Dal types and consuming the full quota of budget-friendly vegetables. Consistency is the most important ingredient in your weight loss journey!
-            </p>
-        </footer>
+            const filtered = allRecipes.filter(recipe => {
+                // Check title, mealType, focus, and tags
+                const recipeText = `${recipe.title} ${recipe.mealType} ${recipe.focus} ${recipe.tags.join(' ')}`.toLowerCase();
+                return recipeText.includes(searchTerm);
+            });
 
-    </div>
+            renderRecipes(filtered);
+        }
 
+        // --- IMAGE ANALYSIS LOGIC ---
+
+        document.getElementById('meal-image-input').addEventListener('change', handleImageUpload);
+
+        /**
+         * Converts a File object to a base64 encoded string.
+         * @param {File} file - The file to convert.
+         * @returns {Promise<string>} Base64 data string (e.g., "data:image/jpeg;base64,...").
+         */
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
+                reader.readAsDataURL(file);
+            });
+        }
+        
+        // Exponential backoff retry utility
+        const retryFetch = async (url, options, retries = 3) => {
+            let error;
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response;
+                } catch (e) {
+                    error = e;
+                    const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                    if (i < retries - 1) {
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    }
+                }
+            }
+            throw error;
+        };
+
+        /**
+         * Handles the image upload and calls the Gemini Vision API for analysis.
+         */
+        async function handleImageUpload(event) {
+            const file = event.target.files[0];
+            const loadingEl = document.getElementById('loading-indicator');
+            const resultEl = document.getElementById('analysis-result');
+            const outputEl = document.getElementById('analysis-output');
+            const errorEl = document.getElementById('analysis-error');
+
+            resultEl.classList.add('hidden');
+            errorEl.classList.add('hidden');
+            outputEl.textContent = '';
+            
+            if (!file) return;
+
+            loadingEl.classList.remove('hidden');
+
+            try {
+                // 1. Convert image to base64
+                const base64Url = await fileToBase64(file);
+                const [mimeType, base64Data] = base64Url.split(';base64,');
+                
+                // 2. Construct the API payload
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+                
+                const prompt = "Analyze the attached South Indian meal. Estimate the total calories (kcal) and total protein (grams) in the meal. Given the user's high protein goal, assume portions are large. Provide the response as a clear, formatted text block, listing the estimated ingredients and then the estimations. Do not include any introductory or concluding sentences.";
+
+                const payload = {
+                    contents: [
+                        {
+                            role: "user",
+                            parts: [
+                                { text: prompt },
+                                {
+                                    inlineData: {
+                                        mimeType: mimeType.replace('data:', ''),
+                                        data: base64Data
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    systemInstruction: {
+                        parts: [{ text: "You are an AI nutritionist focused on South Indian cuisine. Your task is to provide estimated macronutrient content for the pictured food. Be concise and focus on calories and protein, recognizing that the user is aiming for a 185g protein target daily." }]
+                    }
+                };
+
+                // 3. Call the Gemini API
+                const response = await retryFetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                
+                const generatedText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (generatedText) {
+                    outputEl.textContent = generatedText;
+                    resultEl.classList.remove('hidden');
+                } else {
+                    errorEl.textContent = "Analysis failed: Could not parse AI response.";
+                    errorEl.classList.remove('hidden');
+                }
+
+            } catch (error) {
+                console.error("Gemini API Error:", error);
+                errorEl.textContent = `Analysis failed: ${error.message}. Please check console for details.`;
+                errorEl.classList.remove('hidden');
+            } finally {
+                loadingEl.classList.add('hidden');
+            }
+        }
+
+        // Initial render when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            filterRecipes();
+        });
+    </script>
 </body>
 </html>
-
-
